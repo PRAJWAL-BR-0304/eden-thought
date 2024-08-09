@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Edenthought</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://bootswatch.com/5/morph/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #c7daed; /* Background color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+        }
+
+        .navbar-brand {
+            color: #343a40;
+            font-size: 28px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-nav .nav-link {
+            color: #343a40;
+            font-size: 1rem;
+            margin: 0 15px; /* Increased space between buttons */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #007bff;
+        }
+
+        .btn-main {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: #ffffff;
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-main:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .jumbotron {
+            background-color: #c7c7c7;
+            padding: 80px 20px;
+            text-align: center;
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .jumbotron h2 {
+            font-size: 48px;
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+
+        .jumbotron p.lead {
+            font-size: 24px;
+            color: #343a40;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: auto;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            margin-top: auto;
+        }
+
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fa fa-book" aria-hidden="true"></i> &nbsp;Edenthought</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto"> <!-- Align items to the right -->
+                    <li class="nav-item">
+                        <a class="btn btn-main" href="{% url 'register' %}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        &nbsp;&nbsp; <!-- Added space between buttons -->
+                        <a class="btn btn-main" href="{% url 'my-login' %}">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+        <div class="container">
+            <h2>Welcome to Edenthought</h2>
+            <p class="lead">A home for your thoughts.</p>
+            <a class="btn btn-main" href="{% url 'register' %}">Register</a>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>About Us</h3>
+                <p>PRAJWAL BR.</p>
+                <p>STUDENT AT DAYANAND SAGAR UNIVERSITY</p>
+            </div>
+            <div class="col-lg-6">
+                <!-- Add your content here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Edenthought. All rights reserved. | Designed by PRAJWAL B R</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap and jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

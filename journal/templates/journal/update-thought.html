@@ -1,0 +1,20 @@
+{% extends 'journal/navbar.html' %}
+{% load crispy_forms_tags %}
+{% block content %}<br>
+  <div class="container bg-white shadow-md p-5 form-layout">
+    <h1> Update Thought </h1>
+    <p> You may modify the details of your chosen thought below:</p>
+    <!-- Submit button for the form -->
+    <br>
+    <form method="POST" autocomplete="off">
+        {% csrf_token %}
+        {{UpdateThought|crispy}}  <!-- CreateThoughtForm.title|as_crispy_fields}} -->
+                                      <!-- CreateThoughtForm.content|as_crispy_fields}} -->
+        <br> 
+        <button class="btn btn-outline-primary btn-md w-100 btn-block p-3" type="submit">&nbsp; Update Thought </button>
+    </form>
+   <br>
+   <a href="{% url 'my-thoughts' %}"> Return to thoughts </a>
+  </div>
+  
+{% endblock %}

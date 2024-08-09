@@ -1,0 +1,114 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edenthought | Register</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/morph/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #999ca0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .form-layout {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .form-layout h3 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 10px;
+        }
+
+        .form-layout h5 {
+            font-size: 18px;
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            border-radius: 8px;
+            box-shadow: none;
+            border: 1px solid #ced4da;
+        }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+        }
+
+        .btn-secondary {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: #ffffff;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .text-center {
+            margin-top: 20px;
+        }
+
+        .text-center a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .text-center a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container bg-white shadow-md p-5 form-layout">
+        <h3>Create Your Account</h3>
+        <h5>Share Your Thoughts Today</h5>
+        <br>
+        <form method="POST" autocomplete="off">
+            {% csrf_token %}
+            {{ RegistrationForm|crispy }}
+            <br>
+            <button class="btn btn-secondary btn-md w-100 btn-block p-3" type="submit">
+                <i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp; Create Account
+            </button>
+        </form>
+        <div class="text-center mt-3">
+            <a href="{% url 'my-login' %}">Already have an account?</a>
+        </div>
+    </div>
+</body>
+
+</html>

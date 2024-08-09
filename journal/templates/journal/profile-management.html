@@ -1,0 +1,138 @@
+{% extends 'journal/navbar.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Profile Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/morph/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #b5bbc0;
+            color: #333;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        .form-layout {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline-primary {
+            color: #eef1f5;
+            border-color: #007bff;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn-outline-primary i {
+            margin-right: 8px;
+        }
+
+        .btn-outline-danger {
+            color: #dc3545;
+            border-color: #dc3545;
+        }
+
+        .btn-outline-danger:hover {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+        .form-container {
+            margin-bottom: 30px;
+        }
+
+        .form-container h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .form-container p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .form-container a {
+            color: #dc3545;
+            font-size: 1rem;
+        }
+
+        .form-container a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            margin-top: 20px;
+        }
+
+        .footer {
+            background: #343a40;
+            padding: 10px 0;
+            text-align: center;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer .text-muted {
+            color: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container form-container">
+        <div class="bg-white shadow-md p-5 form-layout">
+            <h3>Update Username and Email</h3>
+            <p>You can change your username and email below:</p>
+            <form method="POST" autocomplete="off">
+                {% csrf_token %}
+                {{ UserUpdateForm|crispy }}
+                <button class="btn btn-outline-primary btn-md w-100 btn-block p-3" type="submit">&nbsp;Update</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container form-container">
+        <div class="bg-white shadow-md p-5 form-layout">
+            <h3>Update Profile Picture</h3>
+            <p>You may change or upload a profile picture below:</p>
+            <form method="POST" autocomplete="off" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ ProfileUpdateForm|crispy }}
+                <button class="btn btn-outline-primary btn-md w-100 btn-block p-3" type="submit">
+                    <i class="fa fa-picture-o" aria-hidden="true"></i>&nbsp;Upload Profile Picture
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container form-container">
+        <div class="bg-white shadow-md p-5 form-layout">
+            <h3>Delete Your Account</h3>
+            <p>If you would like to close your account, please proceed below:</p>
+            <a href="{% url 'delete-account' %}">Proceed to Delete Your Account</a>
+        </div>
+    </div>
+
+   
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+{% endblock %}

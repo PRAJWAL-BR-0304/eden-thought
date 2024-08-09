@@ -1,0 +1,148 @@
+{% extends 'journal/navbar.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    /* Embedded CSS */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .message-text {
+      font-size: 16px;
+      border-radius: 4px;
+    }
+
+    .container {
+      margin-top: 20px;
+      padding: 15px;
+    }
+
+    .bg-white {
+      background-color: #fff;
+    }
+
+    .shadow-md {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-layout {
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .btn {
+      border-radius: 4px;
+      font-size: 16px;
+      display: inline-block;
+      padding: 12px 24px;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      transition: background-color 0.3s, border-color 0.3s;
+      margin: 10px 0;
+    }
+
+    .btn-outline-primary {
+      border: 2px solid #007bff;
+      color: #007bff;
+      background-color: transparent;
+    }
+
+    .btn-outline-primary:hover {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    .btn-outline-danger {
+      border: 2px solid #dc3545;
+      color: #dc3545;
+      background-color: transparent;
+    }
+
+    .btn-outline-danger:hover {
+      background-color: #dc3545;
+      color: #fff;
+    }
+
+    .btn-md {
+      font-size: 16px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .float-center {
+      margin: 0 auto;
+    }
+
+    .alert-success {
+      color: #155724;
+      background-color: #d4edda;
+      border-color: #c3e6cb;
+      padding: 15px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+
+    hr {
+      margin: 20px 0;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .button-container a {
+      flex: 1;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<div class="container">
+  {% for message in messages %}
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+      <p id="message-timer" class="alert alert-success text-center message-text">
+        <i class="fa fa-check" aria-hidden="true"></i>&nbsp;{{ message }}
+      </p>
+    {% endif %}
+  {% endfor %}
+
+  <div>
+    {% for thoughts in AllThoughts %}
+      <div class="container bg-white shadow-md form-layout">
+        <h3>{{ thoughts.title }}</h3>
+        <p>{{ thoughts.content }}</p>
+        <p>{{ thoughts.date_posted }}</p>
+        <hr>
+        <p>By, {{ thoughts.user }}</p>
+        <div class="button-container">
+          <a class="btn btn-outline-primary btn-md" href="{% url 'update-thought' thoughts.id %}">
+            <i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp;Update
+          </a>
+          <a class="btn btn-outline-danger btn-md" href="{% url 'delete-thought' thoughts.id %}">
+            <i class="fa fa-window-close" aria-hidden="true"></i>&nbsp;Delete
+          </a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <script>
+    // Embedded JavaScript
+    document.addEventListener('DOMContentLoaded', function () {
+      var messageTimer = document.getElementById('message-timer');
+      if (messageTimer) {
+        setTimeout(function() {
+          messageTimer.style.display = 'none';
+        }, 5000); // Hide the message after 5 seconds
+      }
+    });
+  </script>
+{% endblock %}

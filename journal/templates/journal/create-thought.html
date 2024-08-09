@@ -1,0 +1,64 @@
+{% extends 'journal/navbar.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<br>
+
+<div class="container bg-light shadow-lg p-5 form-layout rounded">
+    <h1 class="text-center text-primary mb-4"> Create Thought </h1>
+    <p class="lead text-center"> You may create a thought below:</p>
+    <br>
+    <form method="POST" autocomplete="off">
+        {% csrf_token %}
+        {{ CreateThoughtForm|crispy }}
+        <br> 
+        <button class="btn btn-outline-primary btn-lg w-100 btn-block p-3 mt-3" type="submit"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp; Create Thought </button>
+    </form>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function() {
+      const button = form.querySelector('button[type="submit"]');
+      button.innerHTML = '<i class="fa fa-spinner fa-spin" aria-hidden="true"></i>&nbsp; Creating...';
+      button.disabled = true;
+    });
+  });
+</script>
+
+<style>
+  .form-layout {
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: #6c757d;
+  }
+
+  .btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .btn-outline-primary:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  .btn-outline-primary:focus, .btn-outline-primary:active {
+    background-color: #0056b3;
+    color: #fff;
+  }
+</style>
+{% endblock %}

@@ -1,0 +1,205 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Edenthought | User</title>
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/morph/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Embedded CSS */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #b4b9bf;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        .navbar .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .navbar .navbar-brand:hover {
+            color: #ffd700;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffd700;
+        }
+
+        .navbar-toggler {
+            border: none;
+        }
+
+        .navbar-toggler:focus {
+            outline: none;
+        }
+
+        .hero-section {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero-section .navbar-brand {
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        .hero-image {
+            width: 150px;
+            height: 150px;
+            border: 5px solid #fff;
+            border-radius: 50%;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .hero-section h3 {
+            font-size: 1.2rem;
+            color: #f1f1f1;
+            margin-top: 10px;
+        }
+
+        .hero-section p {
+            font-size: 1rem;
+            color: #f1f1f1;
+            margin-top: 20px;
+        }
+
+        .hero-section .btn {
+            padding: 10px 20px;
+            font-size: 1rem;
+            margin-top: 20px;
+            background-color: #fff;
+            color: #343a40;
+            border: none;
+        }
+
+        .hero-section .btn:hover {
+            background-color: #ffd700;
+            color: #fff;
+        }
+
+        .about-section,
+        .work-section,
+        .contact-section {
+            padding: 60px 0;
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        .about-section h2,
+        .work-section h2,
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #ffd700;
+        }
+
+        .about-section p,
+        .contact-section p {
+            text-align: center;
+            color: #f1f1f1;
+        }
+
+        .work-section .card {
+            margin-bottom: 20px;
+        }
+
+        .contact-section .btn {
+            margin: 5px;
+            background-color: #ffd700;
+            color: #343a40;
+            border: none;
+        }
+
+        .contact-section .btn:hover {
+            background-color: #fff;
+            color: #343a40;
+        }
+
+        .footer {
+            background: #343a40;
+            padding: 20px 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        .footer .text-muted {
+            color: #f1f1f1;
+        }
+
+        .content {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark justify-content-center">
+        <a class="navbar-brand main-heading" href="#"><i class="fa fa-book" aria-hidden="true"></i>&nbsp;Edenthought</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-center" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-link">
+                    <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
+                </li>
+                <li class="nav-link">
+                    <a class="nav-link" href="{% url 'create-thought' %}">Create thoughts</a>
+                </li>
+                <li class="nav-link">
+                    <a class="nav-link" href="{% url 'my-thoughts' %}">My thoughts</a>
+                </li>
+                <li class="nav-link">
+                    <a class="nav-link" href="{% url 'profile-management' %}">Profile Management</a>
+                </li>
+                <li class="nav-link">
+                    <a class="nav-link" href="{% url 'user-logout' %}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Content Block -->
+    <div class="container content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
