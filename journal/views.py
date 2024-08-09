@@ -42,8 +42,13 @@ def my_login(request):
     return render(request, 'journal/my-login.html', context)
 
 def user_logout(request):
+
     auth.logout(request)
+
+    messages.success(request, "You were logged out securely!")
+
     return redirect('')
+
 
 @login_required(login_url='my-login')
 def dashboard(request):
@@ -126,5 +131,6 @@ def delete_account(request):
     if request.method == 'POST':
         deleteUser = User.objects.get(username=request.user)
         deleteUser.delete()
+        messages.success(request, "Your account was deleted!")
         return redirect("")
     return render(request, 'journal/delete-account.html')
