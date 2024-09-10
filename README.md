@@ -1,4 +1,4 @@
-# EDENTHOUGHT WEBSITE
+ # EDENTHOUGHT WEBSITE :-
 ![Screenshot 2024-08-09 234809](https://github.com/user-attachments/assets/b91139f2-699e-4ec5-8aac-52adcf759128)
 ![Screenshot 2024-08-09 234907](https://github.com/user-attachments/assets/326e01e7-a7d9-4291-995b-451b70c174c4)
 ![Screenshot 2024-08-09 234951](https://github.com/user-attachments/assets/20904808-ee71-41a5-8771-c0e3aa018c85)
@@ -14,7 +14,7 @@
 
 
 
-# DJANGO ADMIN PAGE
+ # DJANGO ADMIN PAGE :-
 ![Screenshot 2024-08-09 235925](https://github.com/user-attachments/assets/0fb8cffe-b554-4783-8de6-a89d18b12009)
 ![Screenshot 2024-08-09 235941](https://github.com/user-attachments/assets/1b5ebc23-be31-46c9-8a46-21ba417077f6)
 ![Screenshot 2024-08-09 235950](https://github.com/user-attachments/assets/b499d16d-59c5-4add-9d9f-f69183f3a46c)
@@ -22,7 +22,7 @@
 
 
 
-# RENDER (SERVICE TO DEPLOY THE WESBITE) AND AWS (APPLICATION TO STORE THE DATAABASE)
+ # RENDER (SERVICE TO DEPLOY THE WESBITE) AND AWS (APPLICATION TO STORE THE DATAABASE) :-
 ![Screenshot 2024-08-10 001601](https://github.com/user-attachments/assets/30d871b2-f36a-44e7-ab3c-4b8d74bed63f)
 ![Screenshot 2024-08-10 001613](https://github.com/user-attachments/assets/9b9ead8e-f5b3-499f-bfc0-9e0768d6a056)
 ![Screenshot 2024-08-10 001630](https://github.com/user-attachments/assets/5887304e-da63-485b-b7d3-49c215131131)
