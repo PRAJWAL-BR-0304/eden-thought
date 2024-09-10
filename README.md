@@ -12,11 +12,15 @@
 ![Screenshot 2024-08-09 235711](https://github.com/user-attachments/assets/834cba39-3a64-41b2-9f78-c1c86e746e13)
 ![Screenshot 2024-08-09 235759](https://github.com/user-attachments/assets/09cda120-9eab-4bd3-bfcc-9396fceee63c)
 
+
+
 # DJANGO ADMIN PAGE
 ![Screenshot 2024-08-09 235925](https://github.com/user-attachments/assets/0fb8cffe-b554-4783-8de6-a89d18b12009)
 ![Screenshot 2024-08-09 235941](https://github.com/user-attachments/assets/1b5ebc23-be31-46c9-8a46-21ba417077f6)
 ![Screenshot 2024-08-09 235950](https://github.com/user-attachments/assets/b499d16d-59c5-4add-9d9f-f69183f3a46c)
 ![Screenshot 2024-08-10 000004](https://github.com/user-attachments/assets/690e563a-176c-49b4-8197-971008a408fc)
+
+
 
 # RENDER (SERVICE TO DEPLOY THE WESBITE) AND AWS (APPLICATION TO STORE THE DATAABASE)
 ![Screenshot 2024-08-10 001601](https://github.com/user-attachments/assets/30d871b2-f36a-44e7-ab3c-4b8d74bed63f)
